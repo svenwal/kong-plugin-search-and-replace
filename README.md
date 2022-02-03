@@ -46,7 +46,7 @@ HTTP/1.1 201 Created
 {
     "config": {
         "response_search_string": "https://www%.google%.de",
-        "response_replace_string": "https://duckduckgo.com/",
+        "response_replace_string": "https://duckduckgo.com",
     },
     "created_at": 1554887400000,
     "enabled": true,
