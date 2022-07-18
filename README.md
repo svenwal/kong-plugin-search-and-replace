@@ -1,5 +1,5 @@
 # About
-`````search-and-replace````` is a [Kong](https://konghq.com) plugin which replaces in the response (request will be added in a later release) any string with another string.
+`````search-and-replace````` is a [Kong](https://konghq.com) plugin which replaces in the requst and response any string with another string.
 
 ## Configuration parameters
 |FORM PARAMETER|DEFAULT|DESCRIPTION|
