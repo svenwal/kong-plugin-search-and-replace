@@ -14,6 +14,14 @@ local schema = {
         type = "record",
         fields = {
           -- a standard defined field (typedef), with some customizations
+          { request_search_string = {
+	      type = "string",
+              required = false
+               } },
+          { request_replace_string = {
+	      type = "string",
+              required = false
+               } },
           { response_search_string = {
 	      type = "string",
               required = false
