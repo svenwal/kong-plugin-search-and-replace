@@ -5,6 +5,17 @@ local plugin = {
 
 function plugin:access(plugin_conf)
   if plugin_conf.request_search_string then
+    if plugin_conf.request_maximum_payload_size then
+      local contentLength = kong.request.get_header("Content-Length")
+      if not contentLength then
+        kong.log.warn("Request size limitation set but got no content length header - aborting")
+        return
+      end
+      if tonumber(contentLength) > plugin_conf.request_maximum_payload_size then
+        kong.log.info("Request size limitation set but payload size of " .. contentLength .. " is bigger than the set maximum of " .. plugin_conf.request_maximum_payload_size .. " - aborting")
+        return
+      end
+    end
     local body = kong.request.get_raw_body()
     if body then
       kong.log.debug("Request search string: " .. plugin_conf.request_search_string)

@@ -14,6 +14,11 @@ local schema = {
         type = "record",
         fields = {
           -- a standard defined field (typedef), with some customizations
+          { request_maximum_payload_size = {
+	      type = "integer",
+              required = false,
+              gt = 0,
+               } },
           { request_search_string = {
 	      type = "string",
               required = false
