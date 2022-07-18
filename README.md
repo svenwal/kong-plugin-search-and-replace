@@ -20,14 +20,10 @@
 ## Known limitations
 
 * TBD: GZip encoded payloads are not support
-* TBD: It will run on any payload size so be careful as the content is cached in memory (limitation parameter to be added in later release)
 * TBD: The search string is a Lua pattern matching string so be careful and quote special characters `( ) % . + - * [ ? ^ $` with a prefixed `%` (see also <https://riptutorial.com/lua/example/20315/lua-pattern-matching>). Will add an option to automatically quote them if regexp is not wanted in a later release
-* TBD: only one replacement is done. This will be extended by providing arrays for search and replace config paramters instead
+* TBD: only one replacement is done per request/response. This will be extended by providing arrays for search and replace config paramters instead
 * The response will not provide a `content-length` header anymore due to the plugin phases within Kong
 
-### Done
-
-* Request added in 0.2 -> TBD: As of release 0.1 it only works on the response
 
 ## Examples
 
